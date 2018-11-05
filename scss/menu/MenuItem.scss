@@ -1,0 +1,27 @@
+@import '../Theme';
+@import '../Mixins';
+
+.MenuItem {
+	
+	height: $menu-item-height;
+	line-height: $menu-item-height;
+	font-size: 14px;
+	padding: 0 10px;
+	margin: 8px 0;
+	border-radius: 3px;
+	background-color: #333333;
+	color: $primary-text-color;
+	cursor: pointer;
+
+	@include ellipsis;
+
+	&:hover, &.selected {
+		color: $secondary-color;
+	}
+
+	& > .icon {
+		vertical-align: middle;
+		margin-right: 20px;
+		color: $secondary-color;
+	}
+}

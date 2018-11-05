@@ -1,0 +1,76 @@
+@import '../../Theme';
+@import '../../Mixins';
+
+.page.Albums {
+	& > .Album {
+		& > .head {
+			
+			&:hover {
+				background-color: #333333;
+			}
+			
+			$album-height: 42px;
+
+			position: relative;
+			height: $album-height;
+			border-bottom: 1px solid #414141;
+			cursor: pointer;
+	
+			text-transform: uppercase;
+			font-weight: normal;
+			font-size: 14px;
+			color: $primary-text-color;
+	
+			& > .icon {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				color: $secondary-color;
+			}
+
+			& > .title {
+				position: absolute;
+				top: 0;
+				left: 44px;
+				right: 44px;
+				height: $album-height;
+				line-height: $album-height;
+				@include ellipsis;
+			}
+
+			& > .arrow {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				color: $secondary-color;
+				transition: 300ms;
+			}
+		}
+
+		& > .body {
+			text-align: center;
+		}
+
+		&.collapsed {
+			& > .body {
+				display: none;
+			}
+		}
+
+		&.expanded {
+			& > .head {
+				& > .arrow {
+					transform: rotate(90deg);
+				}
+			}
+			& > .body {
+				display: block;
+			}
+			&.loaded {
+				& > .body {
+					padding-bottom: 10px;
+				}
+			}
+		}
+	}
+}

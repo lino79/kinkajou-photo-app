@@ -1,0 +1,16 @@
+@import '../Theme';
+@import '../Mixins';
+
+.MenuSection {
+	
+	height: $menu-item-height;
+	line-height: $menu-item-height;
+	font-size: 14px;
+	padding: 0 10px;
+	margin: 8px 0;
+	color: $tertiary-color;
+	text-transform: uppercase;
+	font-style: italic;
+
+	@include ellipsis;
+}

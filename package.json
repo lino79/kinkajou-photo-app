@@ -1,0 +1,33 @@
+{
+	"name": "kinkajou-photo-app",
+	"version": "0.0.1",
+	"private": true,
+	"description": "A photo gallery application",
+	"scripts": {
+		"sass": "sass --watch scss:css",
+		"babel": "babel --watch src --out-dir build --source-maps",
+		"build": "rimraf build && rimraf css && babel src --out-dir build --source-maps && sass --update scss:css"
+	},
+	"author": "Fabio Contigiani <fabio.contigiani@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"requirejs": "2.3.6",
+		"@kinkajou/module": "^0.0.1-alpha.1",
+		"@kinkajou/tools": "^0.0.1-alpha.1",
+		"@kinkajou/kinkajou": "^0.0.1-alpha.1",
+		"@kinkajou/ajax": "^0.0.1-alpha.1",
+		"@kinkajou/svg-icon": "^0.0.1-alpha.1",
+		"@kinkajou/icons": "^0.0.1-alpha.1",
+		"@kinkajou/linear-progress": "^0.0.1-alpha.1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.0.0",
+		"@babel/core": "^7.0.0",
+		"@babel/plugin-transform-modules-amd": "^7.0.0",
+		"@babel/plugin-transform-react-jsx": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
+		"@material/linear-progress": "^0.40.1",
+		"rimraf": "^2.6.2",
+		"sass": "^1.0.0"
+	}
+}

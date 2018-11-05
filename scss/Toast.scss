@@ -1,0 +1,34 @@
+@import 'Theme';
+@import 'Mixins';
+
+.Toast {
+
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	
+	$height: 50px;
+	height: $height;
+	line-height: $height;
+	max-width: 400px;
+
+	margin: 0;
+	padding: 0 10px;
+
+	$border-radius: 3px;
+	-webkit-border-radius: $border-radius;
+	-moz-border-radius: $border-radius;
+	border-radius: $border-radius;
+
+	background-color: $error-color;
+	color: $primary-text-color;
+	
+	@include ellipsis;
+
+	&.hidden {
+		display: none;
+	}
+	&.visible {
+		display: inline-block;
+	}
+}

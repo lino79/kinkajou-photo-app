@@ -1,0 +1,17 @@
+@import './Theme';
+
+.MenuButton {
+	cursor: pointer;
+	color: $primary-text-color;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0 30px 0 0;
+	vertical-align: middle;
+}
+
+@media only screen and (min-width: 640px) {
+	.MenuButton {
+		display: none;
+	}
+}

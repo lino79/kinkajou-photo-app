@@ -1,0 +1,14 @@
+@import '../Theme';
+@import '../Section';
+
+.page.Home {
+	
+	padding: 20px;
+	font-size: 22px;
+	color: $primary-text-color;
+
+	a, a:link, a:hover, a:focus, a:active {
+		color: $secondary-color;
+		text-decoration: none;
+	}
+}

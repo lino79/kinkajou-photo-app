@@ -1,0 +1,35 @@
+@import 'Theme';
+@import 'Mixins';
+
+html {
+	font-family: "Roboto mono", monospace;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $primary-color;
+	@include scrollbar;
+}
+
+* {
+	@include unselectable;
+}
+
+header {
+	& > .progressBar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		.mdc-linear-progress__buffer {
+			background-color: $primary-color;
+		}
+		.mdc-linear-progress__bar-inner {
+			background-color: $secondary-color;
+		}
+	}
+	& > .Logo {
+		margin-right: 30px;
+	}
+}

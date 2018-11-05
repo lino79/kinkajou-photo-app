@@ -1,0 +1,7 @@
+@import 'Mixins';
+
+.Title {
+	font-size: 18px;
+	text-transform: uppercase;
+	@include ellipsis;
+}

@@ -1,0 +1,55 @@
+@import '../../Theme';
+@import '../../Mixins';
+
+.page.Albums {
+	& > .Album {
+		& > .body {
+			& > .Photo {
+				
+				$size: 150px;
+
+				position: relative;
+				display: inline-block;
+				height: $size;
+				width: $size;
+				background-color: #333333;
+				margin-top: 10px;
+				margin-right: 10px;
+				text-decoration: none;
+				cursor: pointer;
+
+				& > img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: $size;
+					width: $size;
+				}
+
+				$author-height: 20px;
+
+				& > .author-bg, & > .author {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: $author-height;
+				}
+
+				& > .author-bg {
+					display: inline-block;
+					background-color: $primary-color;
+					opacity: .6;
+				}
+
+				& > .author {
+					line-height: $author-height;
+					color: $primary-text-color;
+					font-size: 10px;
+					text-decoration: none;
+					@include ellipsis;
+				}
+			}
+		}
+	}
+}

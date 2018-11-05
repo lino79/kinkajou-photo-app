@@ -1,0 +1,94 @@
+@import 'Theme';
+@import 'Mixins';
+
+$header-height: 80px;
+$menu-width: 320px;
+
+.AppLayout {
+
+	margin: 0;
+	padding-top: $header-height;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: $menu-width;
+
+	& > header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: $header-height;
+		margin: 0;
+		padding: 0 30px;
+		background-color: $primary-color;
+		color: $primary-text-color;
+		@include box-shadow(0 2px 4px rgba(0,0,0,.5));
+		@include flex-box;
+		@include flex-direction(row);
+		@include align-items(center);
+	}
+	
+	& > nav {
+		position: fixed;
+		top: $header-height;
+		left: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 0;
+		width: $menu-width;
+		background-color: $primary-color;
+		@include box-shadow(4px 0px 4px 0px rgba(0,0,0,0.5));
+		transition: left 300ms linear;
+	}
+
+	& > .scroll {
+		overflow-x: hidden;
+		overflow-y: auto;
+		@include scrollbar;
+	}
+
+	& > .scrim {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.AppLayout {
+		
+		padding-left: 0;
+
+		& > .scrim {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: white;
+			@include transition(opacity .5s ease-in-out);
+		}
+
+		&.closed {
+			
+			& > nav {
+				left: -$menu-width;
+			}
+
+			& > .scrim {
+				z-index: -1;
+				opacity: 0;
+			}
+		}
+
+		&.opened {
+			
+			& > nav {
+				left: 0;
+			}
+
+			& > .scrim {
+				opacity: .2;
+			}
+		}
+	}
+}

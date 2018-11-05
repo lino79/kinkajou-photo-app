@@ -1,0 +1,9 @@
+.Logo {
+	vertical-align: middle;
+}
+
+@media only screen and (max-width: 640px) {
+	.Logo {
+		display: none !important;
+	}
+}

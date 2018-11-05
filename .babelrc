@@ -1,0 +1,9 @@
+{
+	"presets": ["@babel/env"],
+	"plugins": [
+		"@babel/transform-modules-amd",
+		["@babel/transform-react-jsx", {
+			"pragma": "Kinkajou.createElement"
+		}]
+	]
+}
